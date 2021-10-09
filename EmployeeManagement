@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+</head>
+
+<body>
+    <script>
+        class Employee {
+            id;
+            first_name;
+            last_name;
+            salary;
+            constructor(id, first_name, last_name, salary) {
+                this.id = id;
+                this.first_name = first_name;
+                this.last_name = last_name;
+                this.salary = salary;
+            }
+            getID() {
+                return this.id;
+            }
+            getFirstName() {
+                return this.first_name;
+            }
+            getLastName() {
+                return this.last_name;
+            }
+            getName() {
+                return this.first_name + ' ' + this.last_name;
+            }
+            getSalary() {
+                return this.salary;
+            }
+            getAnnualSalary() {
+                return this.salary * 12;
+            }
+            raiseSalary(percent) {
+                this.salary = this.salary * (1 + percent / 100);
+            }
+        }
+        var emPloyee = new Employee(1, "Phạm", "Bình An", 10);
+        console.log('Họ và tên: ' + emPloyee.getName());
+        console.log('Lương hàng tháng: ' + emPloyee.getSalary() + ' triệu/tháng');
+        console.log('Lương cả năm: ' + emPloyee.getAnnualSalary() + ' triệu/năm');
+        emPloyee.raiseSalary(20);
+        console.log('Lương hàng tháng sau khi tăng lương: ' + emPloyee.getSalary() + ' triệu/tháng');
+        console.log('Lương cả năm sau khi tăng lương: ' + emPloyee.getAnnualSalary() + ' triệu/năm');
+    </script>
+</body>
+
+</html>
